@@ -27,3 +27,7 @@ numbers, or special characters!
   https://www.w3schools.com/js/js_random.asp
 
   Triology Education Services
+  
+## License
+  
+  None
