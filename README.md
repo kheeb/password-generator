@@ -8,7 +8,6 @@ password should contain uppercase or lowercase letters, numbers,
 or special symbols, and then generates a unique password for the user.
 
 ## Usage
-/Users/karaheeb/bootcamp/upenn-virt-fsf-ft-11-2021-u-lol/03-JavaScript/02-Homework/Assets/03-javascript-homework-demo.png
 
 Press the red button to generate password, and then choose desired
 characters as prompted by alerts. Random password will appear in
