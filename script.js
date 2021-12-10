@@ -1,25 +1,5 @@
-// GIVEN I need a new, secure password
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
-    // alerts? 
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-    // alerts offer choices for upper, lower, number, and special 
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters
-    // need var for passwordLength and limitations
-// WHEN asked for character types to include in the password
-// THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-    //  toLowerCase or toUpperCase 
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
-    
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
-// 0123456789abcdefghijklmnopqrstuvwxyz!@$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
+// variations of character options
 var uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz";
 var numbers ="1234567890"
@@ -27,16 +7,15 @@ var specialCharacters = "!@$%^&*()"
 
 var characters = ""
 
+// creates prompts for character types and adds them to the characters variable
 function generatePassword() {
 var hasUppercase = confirm("Do you want uppercase letters?")
-    // if(!hasUppercase) {
-    //     return alert("You must have uppercase letters. Sorry!")
-    // }
 var hasLowercase = confirm("Do you want lowercase letters?")
 var hasNumbers = confirm("Do you want numbers?")
 var hasSpecial = confirm("Do you want special characters?")
-// var characterCount = prompt("How long do you want your password to be? (Must be at least 8 characters.)")
-if(hasUppercase){
+
+// adds user choices to characters being used in password
+if(hasUppercase) {
     characters += uppercaseCharacters
 }
 if(hasLowercase){
@@ -54,7 +33,7 @@ if(characters.length === 0){
 }
 
 
-var passwordLength = []
+var passwordLength = 10
 var password = "";
     for(var i = 0; i<=passwordLength; i++) {
         var randomNumber = Math.floor(Math.random() * characters.length); 
@@ -63,10 +42,10 @@ var password = "";
     return password
 }
 
-// Assignment Code
+// creates red button
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+// displays password after creating it
 function displayPassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -75,6 +54,6 @@ function displayPassword() {
 
 }
 
-// Add event listener to generate button
+// add event listener to generate button
 generateBtn.addEventListener("click", displayPassword);
 
